@@ -1,0 +1,31 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Personel Sayfası</h2>
+<br />
+@using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+<form method="post" class="form-group">
+    @Html.LabelFor(x => x.personelAd)
+    <br />
+    @Html.TextBoxFor(x => x.personelAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.personelSoyad)
+    <br />
+    @Html.TextBoxFor(x => x.personelSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.personelGorsel)
+    @*@Html.TextBoxFor(x => x.personelGorsel, new { @class = "form-control" })*@
+    <input type="file" name="personelGorsel" />
+    <br />
+    @Html.LabelFor(x => x.Departman)
+    <br />
+    @Html.DropDownListFor(x => x.departmanID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" }) @*uruncontrollerdan gonderdiğimiz viewbag ile id value su ve adını getirdik*@
+
+    <br />
+    <button class="btn btn-success">Personel Ekle</button>
+</form>
+}

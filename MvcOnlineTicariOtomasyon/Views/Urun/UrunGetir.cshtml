@@ -1,0 +1,32 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Urun Güncelleme Sayfası</h2>
+<br />
+
+
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{   @Html.HiddenFor(x=>x.urunID)
+    @Html.LabelFor(x => x.urunAd)
+    @Html.TextBoxFor(x => x.urunAd, new { @class = "form-control" })
+    @Html.LabelFor(x => x.marka)
+    @Html.TextBoxFor(x => x.marka, new { @class = "form-control" })
+    @Html.LabelFor(x => x.stok)
+    @Html.TextBoxFor(x => x.stok, new { @class = "form-control" })
+    @Html.LabelFor(x => x.alisFiyati)
+    @Html.TextBoxFor(x => x.alisFiyati, new { @class = "form-control" })
+    @Html.LabelFor(x => x.satisFiyati)
+    @Html.TextBoxFor(x => x.satisFiyati, new { @class = "form-control" })
+    @Html.LabelFor(x => x.Kategori)
+    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" }) @*uruncontrollerdan gonderdiğimiz viewbag ile id value su ve adını getirdik*@
+    @Html.LabelFor(x => x.urunGorsel)
+    @Html.TextBoxFor(x => x.urunGorsel, new { @class = "form-control" })
+    @Html.LabelFor(x => x.durum)
+    @Html.TextBoxFor(x => x.durum, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Değişiklikleri Kaydet</button>
+}

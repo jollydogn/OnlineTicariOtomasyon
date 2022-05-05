@@ -1,0 +1,40 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Faturalar
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("FaturaGuncelle", "Fatura", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.faturaID)
+    @Html.LabelFor(x => x.faturaSiraNo)
+    <br />
+    @Html.TextBoxFor(x => x.faturaSiraNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.faturaTarih)
+    <br />
+    @Html.TextBoxFor(x => x.faturaTarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.faturaVergiDairesi)
+    <br />
+    @Html.TextBoxFor(x => x.faturaVergiDairesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.faturaSaat)
+    <br />
+    @Html.TextBoxFor(x => x.faturaSaat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.teslimEden)
+    <br />
+    @Html.TextBoxFor(x => x.teslimEden, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.teslimAlan)
+    <br />
+    @Html.TextBoxFor(x => x.teslimAlan, new { @class = "form-control" })
+</div>
+    <br />
+    <button class="btn btn-warning" style="color:white">Güncelle</button>
+}

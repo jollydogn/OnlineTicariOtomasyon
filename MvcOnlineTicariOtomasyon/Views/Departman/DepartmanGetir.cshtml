@@ -1,0 +1,22 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Departman
+@{
+    ViewBag.Title = "DepartmanGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>DepartmanGüncelleme</h2>
+<br />
+
+@using (Html.BeginForm("DepartmanGüncelleme", "Departman", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.departmanAd)
+        <br />  <br />
+        @Html.TextBoxFor(x => x.departmanAd, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.departmanID)
+    </div>
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+}
+

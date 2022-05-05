@@ -1,0 +1,91 @@
+﻿@model IEnumerable<MvcOnlineTicariOtomasyon.Models.Siniflar.GrupSinif3>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Ürün Marka Tablosu</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Marka</th>
+                    <th>Progress Bar</th>
+                    <th style="width: 40px">Sayı</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int sirano = 0; int sayi1;}
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@{sirano++;}@sirano.</td>
+                        <td>@x.marka</td>
+                        <td>
+                            @if (x.sayi == 1)
+                            {
+                                <div class="progress progress-xs">
+                                    @{sayi1 = @x.sayi * 10;}
+                                    <div class="progress-bar bg-gradient-lime" style="width: @sayi1%"></div>
+                                </div>
+                            }
+                            @if (x.sayi == 2)
+                            {
+                                <div class="progress progress-xs">
+                                    @{sayi1 = @x.sayi * 10;}
+                                    <div class="progress-bar bg-cyan" style="width: @sayi1%"></div>
+                                </div>
+                            }
+                            @if (x.sayi == 3)
+                            {
+                                <div class="progress progress-xs">
+                                    @{sayi1 = @x.sayi * 10;}
+                                    <div class="progress-bar bg-fuchsia" style="width: @sayi1%"></div>
+                                </div>
+                            }
+                            @if (x.sayi == 4)
+                            {
+                                <div class="progress progress-xs">
+                                    @{sayi1 = @x.sayi * 10;}
+                                    <div class="progress-bar bg-gradient-gray-dark" style="width: @sayi1%"></div>
+                                </div>
+                            }
+                            @if (x.sayi == 5)
+                            {
+                                <div class="progress progress-xs">
+                                    @{sayi1 = @x.sayi * 10;}
+                                    <div class="progress-bar bg-gradient-yellow" style="width: @sayi1%"></div>
+                                </div>
+                            }
+
+                        </td>
+                        <td>
+                            @if (x.sayi == 1)
+                            {
+                                <span class="badge bg-success">@x.sayi</span>
+                            }
+                            @if (x.sayi == 2)
+                            {
+                                <span class="badge bg-warning">@x.sayi</span>
+                            }
+                            @if (x.sayi == 3)
+                            {
+                                <span class="badge bg-blue">@x.sayi</span>
+                            }
+                            @if (x.sayi == 4)
+                            {
+                                <span class="badge bg-light">@x.sayi</span>
+                            }
+                            @if (x.sayi == 5)
+                            {
+                                <span class="badge bg-cyan">@x.sayi</span>
+                            }
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

@@ -1,0 +1,35 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Personel Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.personelID)
+    @Html.LabelFor(x => x.personelAd)
+    <br />
+    @Html.TextBoxFor(x => x.personelAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.personelSoyad)
+    <br />
+    @Html.TextBoxFor(x => x.personelSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.personelGorsel)
+    <br />
+    <input type="file" name="personelGorsel" />
+    <br />
+    @Html.LabelFor(x => x.Departman)
+    <br />
+    @Html.DropDownListFor(x => x.departmanID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" }) @*uruncontrollerdan gonderdiğimiz viewbag ile id value su ve adını getirdik*@
+    <br />
+
+</div>
+    <br />
+    <button class="btn btn-warning" style="color:white">Güncelle</button>
+}
+
